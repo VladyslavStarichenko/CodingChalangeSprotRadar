@@ -21,11 +21,20 @@ public class AppUtil {
      * Method validates the value is of alphanumerical characters and spaces.
      *
      * @param value is value to validate
-     *
      * @return boolean value whether the name is of alphanumeric characters
      */
     public boolean isValidInput(String value) {
-        String pattern = "[a-zA-Z\\s]+$";
+        String pattern = "^[a-zA-Z0-9]*$";
         return Pattern.matches(pattern, value);
     }
+
+    public boolean isValidId(String id) {
+        String pattern = "^[a-zA-Z0-9]*$";
+        return id.length() == 6 && Pattern.matches(pattern, id);
+    }
+
+    public boolean isValidScore(int score) {
+        return score == -1;
+    }
+
 }

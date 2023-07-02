@@ -1,6 +1,4 @@
-package sprot.radar;
-
-import sprot.radar.model.Match;
+package sprot.radar.model;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -40,8 +38,8 @@ public class ScoreBoardRegistry {
         this.matches = new ArrayList<>(matches);
     }
 
-    public boolean startGame(Match match) {
-        return matches.add(match);
+    public void startGame(Match match) {
+        matches.add(match);
     }
 
     public boolean removeMatchFromTheBoard(String id) {
@@ -56,12 +54,12 @@ public class ScoreBoardRegistry {
                 .findAny();
     }
 
-    public boolean updateScore(String matchId, int homeScore, int awayScore) {
-        return getMatchById(matchId).map(match -> {
-            match.setHomeScore(homeScore);
-            match.setAwayScore(awayScore);
-            return true;
-        }).orElse(false);
+    public void updateScore(String matchId, int homeScore, int awayScore) {
+        getMatchById(matchId)
+                .ifPresent(match -> {
+                    match.setHomeScore(homeScore);
+                    match.setAwayScore(awayScore);
+                });
     }
 
     public List<Match> getSummaryOfGamesInProgress() {
