@@ -26,4 +26,9 @@ public class Match {
         this.dateStart = LocalDateTime.now();
     }
 
+
+    public int getTotalScore() {
+        return homeScore + awayScore;
+    }
+
 }
