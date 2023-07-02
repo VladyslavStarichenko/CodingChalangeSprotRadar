@@ -24,7 +24,7 @@ public class AppUtil {
      * @return boolean value whether the name is of alphanumeric characters
      */
     public boolean isValidInput(String value) {
-        String pattern = "^[a-zA-Z0-9]*$";
+        String pattern = "^[a-zA-Z0-9 ]*$";
         return Pattern.matches(pattern, value);
     }
 
