@@ -68,7 +68,7 @@ public class ScoreBoardView {
         scoreBoardController.startNewGame(homeTeam, awayTeam);
     }
 
-    private String checkTeamName(String teamName) {
+    public String checkTeamName(String teamName) {
         if(!appUtil.isValidInput(teamName)){
             System.out.println("The entered team name is not valid.");
             return "invalid";

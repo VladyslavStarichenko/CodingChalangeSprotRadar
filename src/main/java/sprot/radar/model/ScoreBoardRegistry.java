@@ -42,6 +42,10 @@ public class ScoreBoardRegistry {
         matches.add(match);
     }
 
+    public void removeAllMatches() {
+        matches.removeAll(matches);
+    }
+
     public boolean removeMatchFromTheBoard(String id) {
         return getMatchById(id)
                 .map(match -> matches.remove(match))

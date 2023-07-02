@@ -26,9 +26,7 @@ public class ScoreBoardController {
         }
         else {
             scoreBoardView.displayMessage("\nThere's an error during the match adding");
-
         }
-
     }
 
     public void updateScore(String matchId, int homeScore, int awayScore) {
